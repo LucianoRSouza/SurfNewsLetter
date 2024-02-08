@@ -12,6 +12,14 @@ body {
 
 .container {
     text-align: center;
+    border: 2px solid #ff0000; /* Borda vermelha */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-weight: bold;
+    color: #ffcc00; /* Amarelo */
 }
 
 form {
@@ -30,26 +38,14 @@ input[type="email"] {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #ff8500; /* Laranja por do sol */
+    background-color: #ff0000; /* Vermelho */
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #ff6b00; /* Laranja mais escuro ao passar o mouse */
-}
-
-@media screen and (max-width: 600px) {
-    /* Estilos para telas de até 600px de largura (celulares) */
-    body {
-        padding: 20px; /* Adiciona um pouco de espaço nas laterais */
-    }
-
-    input[type="email"] {
-        width: 100%; /* Ocupa toda a largura disponível */
-        margin-right: 0; /* Remove a margem direita */
-        margin-bottom: 10px; /* Adiciona um pouco de espaço inferior */
-    }
+    background-color: #cc0000; /* Vermelho mais escuro ao passar o mouse */
 }
