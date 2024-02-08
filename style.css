@@ -15,6 +15,7 @@ body {
     border: 2px solid #ff0000; /* Borda vermelha */
     padding: 20px;
     border-radius: 10px;
+    background-color: #008000; /* Verde representando as cores da Jamaica */
 }
 
 h1 {
