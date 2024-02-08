@@ -1,5 +1,4 @@
-from flask import Flask, request
-from flask_mysql import MySQL
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -14,7 +13,8 @@ mysql = MySQL(app)
 @app.route('/submit_email', methods=['POST'])
 def submit_email():
     # Get email data from request
-    email = request.form['email']
+    data = request.get_json()
+    email = data['email']
 
     # Insert email data into MySQL database
     cur = mysql.connection.cursor()
