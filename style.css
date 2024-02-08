@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0077be; /* Azul oceano */
+    color: #fff; /* Texto branco */
+}
+
+.container {
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border: 1px solid #fff; /* Borda branca */
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff8500; /* Laranja por do sol */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6b00; /* Laranja mais escuro ao passar o mouse */
+}
+
+@media screen and (max-width: 600px) {
+    /* Estilos para telas de até 600px de largura (celulares) */
+    body {
+        padding: 20px; /* Adiciona um pouco de espaço nas laterais */
+    }
+
+    input[type="email"] {
+        width: 100%; /* Ocupa toda a largura disponível */
+        margin-right: 0; /* Remove a margem direita */
+        margin-bottom: 10px; /* Adiciona um pouco de espaço inferior */
+    }
+}
