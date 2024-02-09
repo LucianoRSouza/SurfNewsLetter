@@ -15,14 +15,10 @@ services:
 
   # Back-end
   backend:
-    image: node:latest
+    build: .
     container_name: backend
-    working_dir: /app
-    volumes:
-      - ./backend:/app
     ports:
       - "5001:5000"
-    command: npm start
     networks:
       - webapp_network
     depends_on:
@@ -34,7 +30,7 @@ services:
     container_name: mysql_db
     environment:
       MYSQL_ROOT_PASSWORD: 456123
-      MYSQL_DATABASE: newsletter_db
+      MYSQL_DATABASE: webapp_db
       MYSQL_USER: Vlap
       MYSQL_PASSWORD: 456123
     ports:
@@ -45,4 +41,3 @@ services:
 networks:
   webapp_network:
     driver: bridge
-

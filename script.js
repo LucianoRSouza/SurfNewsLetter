@@ -17,14 +17,10 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         },
         body: JSON.stringify(formData)
     })
-    .then(response => {
-        if (response.ok) {
-            console.log('Email submitted successfully');
-            // Aqui você pode adicionar qualquer lógica adicional, como mostrar uma mensagem de sucesso para o usuário
-        } else {
-            console.error('Failed to submit email');
-            // Aqui você pode adicionar tratamento de erro, se necessário
-        }
+    .then(response => response.text())
+    .then(data => {
+        console.log(data); // Exibe a resposta do servidor no console do navegador
+        // Você pode adicionar código aqui para lidar com a resposta do servidor, se necessário
     })
     .catch(error => {
         console.error('Error submitting email:', error);

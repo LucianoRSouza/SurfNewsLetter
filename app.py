@@ -13,17 +13,20 @@ mysql = MySQL(app)
 
 @app.route('/submit_email', methods=['POST'])
 def submit_email():
-    # Get email data from request
-    data = request.get_json()
-    email = data['email']
+    try:
+        # Get email data from request
+        data = request.get_json()
+        email = data['email']
 
-    # Insert email data into MySQL database
-    cur = mysql.connection.cursor()
-    cur.execute("INSERT INTO emails (email) VALUES (%s)", (email,))
-    mysql.connection.commit()
-    cur.close()
+        # Insert email data into MySQL database
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO emails (email) VALUES (%s)", (email,))
+        mysql.connection.commit()
+        cur.close()
 
-    return 'Email submitted successfully'
+        return 'Email submitted successfully'
+    except Exception as e:
+        return str(e)
 
 if __name__ == '__main__':
     app.run(debug=True)
