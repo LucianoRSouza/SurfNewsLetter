@@ -1,0 +1,48 @@
+version: '3'
+services:
+  # Front-end
+  frontend:
+    image: node:latest
+    container_name: frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    command: npm start
+    networks:
+      - webapp_network
+
+  # Back-end
+  backend:
+    image: node:latest
+    container_name: backend
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    ports:
+      - "5001:5000"
+    command: npm start
+    networks:
+      - webapp_network
+    depends_on:
+      - database
+
+  # Database (MySQL)
+  database:
+    image: mysql:latest
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: 456123
+      MYSQL_DATABASE: newsletter_db
+      MYSQL_USER: Vlap
+      MYSQL_PASSWORD: 456123
+    ports:
+      - "3306:3306"
+    networks:
+      - webapp_network
+
+networks:
+  webapp_network:
+    driver: bridge
+
