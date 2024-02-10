@@ -1,19 +1,6 @@
 version: '3'
 services:
-  # Front-end
-  frontend:
-    image: node:latest
-    container_name: frontend
-    working_dir: /app
-    volumes:
-      - ./frontend:/app
-    ports:
-      - "3000:3000"
-    command: npm start
-    networks:
-      - webapp_network
-
-  # Back-end
+  # Backend
   backend:
     build: .
     container_name: backend
@@ -23,6 +10,19 @@ services:
       - webapp_network
     depends_on:
       - database
+
+  # Frontend
+  frontend:
+    image: node:latest
+    container_name: frontend
+    working_dir: /app
+    volumes:
+      - ./meu_projeto:/app  # Update volume mapping to include entire project directory
+    ports:
+      - "3000:3000"
+    command: npm start
+    networks:
+      - webapp_network
 
   # Database (MySQL)
   database:
