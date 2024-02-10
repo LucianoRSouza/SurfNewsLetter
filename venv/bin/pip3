@@ -1,4 +1,4 @@
-#!/Users/skneuropa/meu_projeto/backend/venv/bin/python
+#!/Users/lucianosouza/Desktop/meu_projeto/venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys
