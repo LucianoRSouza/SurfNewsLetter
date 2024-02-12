@@ -5,7 +5,7 @@ FROM python:3.8
 WORKDIR /app
 
 # Copy only the necessary files for installing dependencies
-COPY ./requirements.txt .
+COPY requirements.txt .
 
 # Install Flask and other dependencies
 RUN pip install -r requirements.txt
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5001
 
 # Command to run the Flask application
-CMD ["python", "meu_projeto/app.py"]
+CMD ["python", "app.py"]

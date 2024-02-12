@@ -6,27 +6,26 @@ services:
     container_name: frontend
     working_dir: /app
     volumes:
-      - ./frontend:/app
+      - ~/Desktop/meu_projeto/frontend:/app
     ports:
       - "3000:3000"
     command: npm start
     networks:
       - webapp_network
 
-    # Back-end
+  # Back-end
   backend:
-    build: .
+    build: ./meu_projeto/backend
     container_name: backend
     ports:
       - "5001:5001"
     volumes:
-      - ./meu_projeto:/app
-    working_dir: /app/meu_projeto
+      - ~/Desktop/meu_projeto/backend:/app
+    working_dir: /app
     networks:
       - webapp_network
     depends_on:
       - database
-
 
   # Database (MySQL)
   database:
